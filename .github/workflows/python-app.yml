@@ -42,7 +42,9 @@ jobs:
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
+        HEROKU_EMAIL: ${{ secrets.HEROKU_EMAIL }}
+        
       if: github.ref == 'refs/heads/master' && job.status == 'success'
-      run: heroku git:remote -a $HEROKU_APP_NAME
+      run: heroku git:remote --app $HEROKU_APP_NAME
     -  name: Push to Heroku
-       run: git push -v heroku master
+       run: git push heroku master
