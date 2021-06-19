@@ -45,4 +45,4 @@ jobs:
       if: github.ref == 'refs/heads/master' && job.status == 'success'
       run: heroku git:remote -a $HEROKU_APP_NAME
     -  name: Push to Heroku
-       run: git push -a heroku master
+       run: git push --all heroku master
