@@ -1,4 +1,4 @@
 from app import index
 
 def test_index():
-    assert index() == "Hello, World Welcome to CICD!"
+    assert index() == "Hello All, Welcome to CICD!"
